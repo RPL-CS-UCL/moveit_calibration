@@ -6,7 +6,7 @@ From a ROS workspace that has the robot's rviz bringup do the following
 
 ```bash
 cd src
-git clone <this repo>
+git clone https://github.com/RPL-CS-UCL/moveit_calibration.git
 git clone https://github.com/PickNikRobotics/rviz_visual_tools.git
 cd .. 
 rosdep install --from-paths src --ignore-src --rosdistro melodic
@@ -22,9 +22,9 @@ catkin build
 - 4) Fill out all the setuo fields. Make sure you select your `camera_link` for the Sensor link! If you select the optical or color frame, it will ruin the calibration and you have to start iv) over.
 - 5) Add the TF's and Camera display in RVIZ
 - 6) Calibrate!
-- 6.1) If hand-on-eye, ChAruco on the ground, if hand-to-eye, ChAruco grasped by end-effector. 
-- 6.2) Move the robot in diffferent positions such that the ChAruco board is visible. 
-- 6.3) Take sample at each pose, making sure that the handeye_target TF is displayed at the correct place in the camera display!
+  - If hand-on-eye, ChAruco on the ground, if hand-to-eye, ChAruco grasped by end-effector. 
+  - Move the robot in diffferent positions such that the ChAruco board is visible. 
+  - Take sample at each pose, making sure that the handeye_target TF is displayed at the correct place in the camera display!
 - 7) Voila! Save the camera_pose (it's a launch file, save wherever you need it and launch it with the rest of the robot)
 
 Tested on Melodic with D455 for external camera calibration. Got 0.01 rad orientation error and 0.04m position error.
